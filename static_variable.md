@@ -15,7 +15,7 @@ before the associated program is executed.
 Unlike `dynamic memory allocation` or `automatic memory allocation` where memory is allocated as
 required at `run time`.
 
-As far as i know a `static variable` is allocated at the compile time and it even if you use recursive call's still has it's value.
+As far as i know a `static variable` is allocated at the compile time even if you use recursive call's still new value.
 might be wrong
 
 ## Addressing
@@ -85,14 +85,13 @@ int main()
 }
 ```
 
-1. the signature of the function `f` declares `f` as a function with *external linkage* which is the default.
-    it's definition must be provided later in the file or in other `translation unit`.
+1. the signature of the function `f` declares `f` as a function with _external linkage_ which is the default.
+   it's definition must be provided later in the file or in other `translation unit`.
 
-2. max is defined as an integer constant. The default linkage for constants is *internal*.
-    it's linkage is changeged to external with the keyword `external`. So now `max` can be accessed in other files.
+2. max is defined as an integer constant. The default linkage for constants is _internal_.
+   it's linkage is changeged to external with the keyword `external`. So now `max` can be accessed in other files.
 
 3. n is defined as integer variable. The default linkage for variables defined outside function bodies is external.
-
 
 ## Example
 
@@ -110,13 +109,22 @@ void my_function()
     printf("%d\n", x);
 }
 
+
+
 int main()
 {
+
+    static hello = 1;
+
     my_function(); // prints 1
     my_function(); // prints 2
     my_function(); // prints 3
     my_function(); // prints 4
     my_function(); // prints 5
+    if (hello == 250)
+        return;
+    hello++;
+    main();
 
     return 0;
 }
