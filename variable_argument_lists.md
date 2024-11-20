@@ -79,3 +79,28 @@ register save area provides the space that is needed to save used registers stat
 ### floating point register
 
 Floating point register is a special type of register used for storing floating-point numbers in a binary format.
+
+## The va_arg
+
+The `va_arg` macro expands to an expression that has the specified type and the value of the next argument in the call,
+the parameter ap must have been initialized by the `va_start` of `va_vopy`.
+
+Each call the `va-arg` modifies `ap` so that the value of successive argument are returned in turn,
+`va_arg` returns the value of the requested type based on the giveen type and set ap to point to the next argument.
+
+The `va_arg` macro access the next variadic function unnamed argument
+
+## The va_start
+
+The `va_start` macros shall be invoked before any access to unnamed arguments.
+The unnamed parameter is an identifier ro the rest of the parameters (arguments) it's the one just before the `(...)`
+in the function declaration.
+
+## The va_end
+
+The `va_end` macro facilitates a normal return from the function whose variable argument list was referred to by
+`va_start` macro or some other `va` macros
+
+The `va_end` macro may modify `ap` so that it's no longer usable, but as so far `va_end` does nothing
+
+If `va_end` is no invoked before the return. the behavior is undefined, the `va_end` return no value.
