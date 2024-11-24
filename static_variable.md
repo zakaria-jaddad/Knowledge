@@ -24,7 +24,7 @@ The absolute address addressing mode only can be used with static variables,
 thought those are the only kinds of variables whose location is know by the `compiler` at compile time.
 
 When the program or a library is loaded into memory `static variables` are stored in
-`data segment` of the program address space (if initialized) or the `BBS segment` (if uninitialized).
+`data segment` of the program address space (if initialized) or the `BSS segment` (if uninitialized).
 
 And are stored in corresponding sections of `object files` priop to loading.
 
