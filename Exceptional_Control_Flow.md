@@ -260,7 +260,7 @@ Users programs must instead access kernel code and data indirectly **via the sys
 Cpu switching from one process to another, that is called Context switching, which saves the state of the old
 process and load saved state for the other process
 
-On The context switching The process is stored in the process is stored in **the process control bloack (PCB)**
+On The context switching The process is stored in **the process control block (PCB)**
 so that all process can be resumed from the same part it was left
 
 each process state is saved in registers **name of register**
