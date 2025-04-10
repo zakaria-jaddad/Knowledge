@@ -263,7 +263,7 @@ process and load saved state for the other process
 On The context switching The process is stored in **the process control block (PCB)**
 so that all process can be resumed from the same part it was left
 
-each process state is saved in registers **name of register**
+each process state is saved in a structure called **process control block (PCB) or switchframe**
 
 The operating system kernel implements multitasking using a higher level
 form of exceptional control flow known as a context switch.
@@ -363,7 +363,7 @@ pid_t getpid(void);
 pid_t getppid(void);
 ```
 
-We can thing of a process as being in one of three states
+A process can be in one of three states
 
 - Running The process is either executing on the CPU or waiting to be executed and will be scheduled
   by the kernel.
